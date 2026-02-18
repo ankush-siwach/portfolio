@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, Download, Mail, Github, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import mypic from "./mypic.jpeg";
+
 
 const Hero = () => {
   const [displayText, setDisplayText] = useState('');
@@ -78,7 +80,7 @@ const Hero = () => {
             <div className="relative w-40 h-40 mx-auto">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full animate-pulse"></div>
               <img
-                src="src\components\sections\mypic.png"
+                src={mypic}
                 alt="Ankush siwach"
                 className="relative w-36 h-36 rounded-full object-cover border-4 border-white dark:border-gray-800 shadow-xl mx-auto mt-2"
               />
