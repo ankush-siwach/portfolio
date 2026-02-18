@@ -6,8 +6,12 @@ import { Button } from '@/components/ui/button';
 const Hero = () => {
   const [displayText, setDisplayText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
-  const titles = ['Web Developer', 'MLSA', 'Innovator', 'Problem Solver'];
-
+  const titles = [
+  'Software Developer',
+  'Full Stack Engineer',
+  'AI & ML Enthusiast',
+  'Scalable System Builder'
+];
   useEffect(() => {
     const currentTitle = titles[currentIndex];
     let charIndex = 0;
@@ -133,7 +137,7 @@ const Hero = () => {
             <Button
   size="lg"
   className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-  onClick={() => window.open('https://drive.google.com/file/d/18nMCDVCNzIEl0X4t9MS165_C05uHyYkv/view?usp=sharing', '_blank')}
+  onClick={() => window.open('https://drive.google.com/file/d/1ZfRxFnlNZXQnA-03uUOoZgVf4U3hjTKq/view?usp=sharing', '_blank')}
 >
   <Download className="mr-2 h-5 w-5" />
   Download Resume
@@ -144,7 +148,13 @@ const Hero = () => {
               variant="outline"
               size="lg"
               className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105"
-             onClick = {()=>window.location.href ='mailto:ankushsiwach86@gmail.com'}
+            onClick={() =>
+                window.open(
+                  "https://mail.google.com/mail/?view=cm&fs=1&to=ankushsiwach86@gmail.com&su=Portfolio%20Inquiry",
+                  "_blank"
+                )
+              }
+
             >
               <Mail className="mr-2 h-5 w-5" />
               Get In Touch
@@ -159,13 +169,14 @@ const Hero = () => {
             className="flex justify-center space-x-6 mb-16"
           >
             {[
-              { icon: Github, href: 'https://github.com/ankush-siwach', label: 'GitHub' },
+              { icon: Github, href: 'https://github.com/ankush-siwach',label: 'GitHub',  },
               { icon: Linkedin, href: 'https://linkedin.com/in/ankushsiwach1', label: 'LinkedIn' },
               { icon: Mail, href: 'mailto:ankushsiwach86@gmail.com', label: 'Email' }
             ].map((social, index) => (
               <motion.a
                 key={social.label}
                 href={social.href}
+                target="_blank"
                 whileHover={{ scale: 1.2, y: -5 }}
                 whileTap={{ scale: 0.9 }}
                 className="p-3 bg-white dark:bg-gray-800 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400"

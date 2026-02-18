@@ -33,39 +33,62 @@ const Contact = () => {
       [e.target.name]: e.target.value
     });
   };
-
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setFormData({ name: '', email: '', subject: '', message: '' });
-      alert('Message sent successfully!');
-    }, 2000);
-  };
+  e.preventDefault();
+  setIsSubmitting(true);
+
+  try {
+    const response = await fetch(
+      "https://formsubmit.co/ajax/ankushsiwach86@gmail.com",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+        }),
+      }
+    );
+
+    if (response.ok) {
+      setFormData({ name: "", email: "", subject: "", message: "" });
+    } else {
+      alert("Failed to send message.");
+    }
+  } catch (error) {
+    alert("Something went wrong.");
+  }
+
+  setIsSubmitting(false);
+};
+
 
   const contactInfo = [
     {
       icon: Mail,
       title: 'Email',
-      value: 'ankush@example.com',
-      href: 'mailto:ankushsiwach86@gmail.com',
+      value: 'ankushsiwach86@gmail.com',
+      href: "https://mail.google.com/mail/?view=cm&fs=1&to=ankushsiwach86@gmail.com&su=Portfolio%20Inquiry",
       color: 'from-blue-500 to-cyan-500'
     },
-    {
-      icon: Phone,
-      title: 'Phone',
-      value: '+91 881-------',
-      href: 'tel:+918-------',
-      color: 'from-green-500 to-emerald-500'
-    },
+   {
+  icon: Linkedin,
+  title: 'LinkedIn',
+  value: 'ankushsiwach1',
+  href: 'https://linkedin.com/in/ankushsiwach1',
+  target: '_blank',
+  color: 'from-blue-600 to-blue-800'
+},
     {
       icon: MapPin,
       title: 'Location',
       value: 'India',
-      href: '#',
+      href: 'https://www.google.com/maps/place/India',
       color: 'from-purple-500 to-pink-500'
     }
   ];
@@ -86,15 +109,10 @@ const Contact = () => {
     {
       icon: Twitter,
       name: 'Twitter',
-      href: '#',
+      href: 'https://x.com/ankushsiwach86',
       color: 'hover:text-blue-400'
     },
-    {
-      icon: MessageCircle,
-      name: 'Discord',
-      href: '#',
-      color: 'hover:text-indigo-600'
-    }
+  
   ];
 
   const containerVariants = {
@@ -156,6 +174,7 @@ const Contact = () => {
                   <motion.a
                     key={info.title}
                     href={info.href}
+                    target='_blank'
                     initial={{ opacity: 0, x: -50 }}
                     animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
                     transition={{ delay: 0.3 + index * 0.1 }}
@@ -187,6 +206,7 @@ const Contact = () => {
                     <motion.a
                       key={social.name}
                       href={social.href}
+                      target = "_blank"
                       initial={{ opacity: 0, scale: 0 }}
                       animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0 }}
                       transition={{ delay: 0.6 + index * 0.1 }}
@@ -208,7 +228,12 @@ const Contact = () => {
                   Send Message
                 </h3>
                 
-                <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit}>
+
+                    <input type="hidden" name="_captcha" value="false" />
+                    <input type="hidden" name="_subject" value="New Portfolio Message!" />
+                    <input type="hidden" name="_template" value="table" />
+
                   <div className="grid md:grid-cols-2 gap-6">
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}

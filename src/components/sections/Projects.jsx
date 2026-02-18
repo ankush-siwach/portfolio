@@ -3,12 +3,15 @@ import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { ExternalLink, Github, Code, Smartphone, ShoppingCart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { FolderKanban } from 'lucide-react';
+
 
 const Projects = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, threshold: 0.2 });
 
   const projects = [
+    
     {
       id: 1,
       title: 'Fasto - E-commerce Platform',
@@ -27,23 +30,24 @@ const Projects = () => {
       github: '#',
       live: '#'
     },
-   
-    {
-      id: 2,
-      title: 'Mentee-Mentor Matching App',
-      description: 'Intelligent platform connecting mentors and mentees in college environment. Features profile-based matching, admin approval system, and secure college email authentication.',
-      image: '/api/placeholder/400/250',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Express', 'JWT'],
-      features: [
-        'College email authentication',
-        'Admin approval system',
-        'Intelligent matching algorithm',
-        'Profile management',
-        'Communication tools'
-      ],
-      icon: Code,
+   {
+  id: 2,
+  title: 'Project Management Software (MERN)',
+  description: 'A full-stack MERN-based project management application that allows teams to create projects, assign tasks, set deadlines, and track real-time progress. Built with secure authentication and dynamic dashboards to enhance collaboration and workflow efficiency.',
+  image: '/api/placeholder/400/250',
+  technologies: ['MongoDB', 'Express.js', 'React.js', 'Node.js', 'JWT', 'REST API'],
+  features: [
+    'JWT-based authentication & authorization',
+    'Create, update & delete projects',
+    'Task assignment with deadline tracking',
+    'Real-time task status updates',
+    'Role-based access control (Admin/Member)',
+    'Dynamic dashboard with project analytics',
+    'Responsive UI with React'
+  ],
+      icon: FolderKanban,
       color: 'from-purple-500 to-pink-500',
-      github: '#',
+      github: 'https://github.com/ankush-siwach/project-management-software',
       live: '#'
     },
 
@@ -66,91 +70,91 @@ const Projects = () => {
       live: '#'
     },
  
-  {
-    id: 4,
-    title: 'Obstacle Detector Robot',
-    description: 'Arduino robot that detects and avoids obstacles using ultrasonic sensors for safe navigation.',
-    image: '/api/placeholder/400/250',
-    technologies: ['Arduino', 'C++', 'Ultrasonic Sensors', 'Motors'],
-    features: [
-      'Obstacle detection',
-      'Automatic stopping',
-      'Path adjustment',
-      'Sensor integration'
-    ],
-    icon: Code,
-    color: 'from-yellow-500 to-green-500',
-    github: '#',
-    live: '#'
-  },
-  {
-    id: 5,
-    title: 'Robo Soccer',
-    description: 'Autonomous soccer-playing robot with motor and sensor-guided movement to chase and kick the ball.',
-    image: '/api/placeholder/400/250',
-    technologies: ['Arduino', 'C++', 'Motors', 'Sensors', 'Servo'],
-    features: [
-      'Ball tracking',
-      'Motor control',
-      'Autonomous movement',
-      'Goal scoring mechanism'
-    ],
-    icon: Code,
-    color: 'from-blue-500 to-indigo-500',
-    github: '#',
-    live: '#'
-  },
-  {
-    id: 6,
-    title: 'Motor Speedometer',
-    description: 'Device to measure and display the speed of DC motors using Arduino and sensor feedback.',
-    image: '/api/placeholder/400/250',
-    technologies: ['Arduino', 'C++', 'Sensors', 'Display Module'],
-    features: [
-      'Motor speed measurement',
-      'Real-time display',
-      'Sensor calibration',
-      'Data logging'
-    ],
-    icon: Code,
-    color: 'from-pink-500 to-purple-500',
-    github: '#',
-    live: '#'
-  },
-  {
-    id: 7,
-    title: 'PCB Shaker',
-    description: 'Arduino-controlled PCB shaker to test durability of PCB assemblies by simulating vibrations.',
-    image: '/api/placeholder/400/250',
-    technologies: ['Arduino', 'C++', 'Motors', 'Mechanical Setup'],
-    features: [
-      'Adjustable vibration intensity',
-      'Timer control',
-      'Durability testing',
-      'Compact design'
-    ],
-    icon: Code,
-    color: 'from-gray-500 to-gray-700',
-    github: '#',
-    live: '#'
-  },
-  {
-    id: 8,
-    title: 'Pick and Place Robot',
-    description: 'Robotic arm that picks objects from one location and places them in another using Arduino and sensors.',
-    image: '/api/placeholder/400/250',
-    technologies: ['Arduino', 'C++', 'Servo Motors', 'Sensors'],
-    features: [
-      'Object detection',
-      'Precise movement',
-      'Motor control',
-      'Automation tasks'
-    ],
-    icon: Code,
-    color: 'from-green-500 to-teal-500',
-    github: '#',
-    live: '#'
-  }
+  // {
+  //   id: 4,
+  //   title: 'Obstacle Detector Robot',
+  //   description: 'Arduino robot that detects and avoids obstacles using ultrasonic sensors for safe navigation.',
+  //   image: '/api/placeholder/400/250',
+  //   technologies: ['Arduino', 'C++', 'Ultrasonic Sensors', 'Motors'],
+  //   features: [
+  //     'Obstacle detection',
+  //     'Automatic stopping',
+  //     'Path adjustment',
+  //     'Sensor integration'
+  //   ],
+  //   icon: Code,
+  //   color: 'from-yellow-500 to-green-500',
+  //   github: '#',
+  //   live: '#'
+  // },
+  // {
+  //   id: 5,
+  //   title: 'Robo Soccer',
+  //   description: 'Autonomous soccer-playing robot with motor and sensor-guided movement to chase and kick the ball.',
+  //   image: '/api/placeholder/400/250',
+  //   technologies: ['Arduino', 'C++', 'Motors', 'Sensors', 'Servo'],
+  //   features: [
+  //     'Ball tracking',
+  //     'Motor control',
+  //     'Autonomous movement',
+  //     'Goal scoring mechanism'
+  //   ],
+  //   icon: Code,
+  //   color: 'from-blue-500 to-indigo-500',
+  //   github: '#',
+  //   live: '#'
+  // },
+  // {
+  //   id: 6,
+  //   title: 'Motor Speedometer',
+  //   description: 'Device to measure and display the speed of DC motors using Arduino and sensor feedback.',
+  //   image: '/api/placeholder/400/250',
+  //   technologies: ['Arduino', 'C++', 'Sensors', 'Display Module'],
+  //   features: [
+  //     'Motor speed measurement',
+  //     'Real-time display',
+  //     'Sensor calibration',
+  //     'Data logging'
+  //   ],
+  //   icon: Code,
+  //   color: 'from-pink-500 to-purple-500',
+  //   github: '#',
+  //   live: '#'
+  // },
+  // {
+  //   id: 7,
+  //   title: 'PCB Shaker',
+  //   description: 'Arduino-controlled PCB shaker to test durability of PCB assemblies by simulating vibrations.',
+  //   image: '/api/placeholder/400/250',
+  //   technologies: ['Arduino', 'C++', 'Motors', 'Mechanical Setup'],
+  //   features: [
+  //     'Adjustable vibration intensity',
+  //     'Timer control',
+  //     'Durability testing',
+  //     'Compact design'
+  //   ],
+  //   icon: Code,
+  //   color: 'from-gray-500 to-gray-700',
+  //   github: '#',
+  //   live: '#'
+  // },
+  // {
+  //   id: 8,
+  //   title: 'Pick and Place Robot',
+  //   description: 'Robotic arm that picks objects from one location and places them in another using Arduino and sensors.',
+  //   image: '/api/placeholder/400/250',
+  //   technologies: ['Arduino', 'C++', 'Servo Motors', 'Sensors'],
+  //   features: [
+  //     'Object detection',
+  //     'Precise movement',
+  //     'Motor control',
+  //     'Automation tasks'
+  //   ],
+  //   icon: Code,
+  //   color: 'from-green-500 to-teal-500',
+  //   github: '#',
+  //   live: '#'
+  // }
 ];
 
 const containerVariants = {
@@ -222,6 +226,10 @@ const containerVariants = {
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                       <div className="absolute bottom-4 left-4 right-4">
                         <div className="flex space-x-3">
+                          <a
+                          href='https://github.com/ankush-siwach/project-management-software'
+                          target='_blan'
+                          >  
                           <Button
                             size="sm"
                             variant="secondary"
@@ -230,6 +238,7 @@ const containerVariants = {
                             <Github className="h-4 w-4 mr-2" />
                             Code
                           </Button>
+                          </a>
                           <Button
                             size="sm"
                             className="bg-blue-600 hover:bg-blue-700 text-white"
@@ -329,14 +338,21 @@ const containerVariants = {
             variants={cardVariants}
             className="text-center mt-16"
           >
+            <a
+             href ="https://github.com/ankush-siwach?tab=repositories"
+              target = "_blank"
+              rel="noopener noreferrer"
+              >
             <Button
               size="lg"
+             
               variant="outline"
               className="border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white px-8 py-3 rounded-full transition-all duration-300 transform hover:scale-105"
             >
               <Github className="mr-2 h-5 w-5" />
               View All Projects on GitHub
             </Button>
+            </a>
           </motion.div>
         </motion.div>
       </div>
